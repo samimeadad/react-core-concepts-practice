@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
 
 function App () {
   return (
@@ -14,7 +15,8 @@ function App () {
 }
 
 function MyComponent ( props ) {
-  const [] = useState();
+  const [ points, setPoints ] = useState( 1 );
+  const [ counter, setCounter ] = useState( 0 );
   const myComponentStyle = {
     backgroundColor: 'floralwhite',
     margin: 'auto',
@@ -26,13 +28,18 @@ function MyComponent ( props ) {
   };
 
   const handleAddPoints = () => {
-    console.log( 'button clicked' );
+    const newPoints = points * 2;
+    const newCounter = counter + 1;
+    setPoints( newPoints );
+    setCounter( newCounter );
   }
 
   return (
     <div style={myComponentStyle}>
       <h1>Brand: {props.brand}</h1>
-      <h4>Price: {props.price}, I have points: </h4>
+      <h4>Price: {props.price}</h4>
+      <h3>My Points: {points}</h3>
+      <h4>Click Counter: {counter}</h4>
       <button onClick={handleAddPoints}>Add Points</button>
       <p style={{color: 'magenta', fontWeight: 'bold'}}>I can create my own component</p>
     </div>
