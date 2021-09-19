@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from 'react';
 // import {useEffect, useState} from 'react';
-import React, {useEffect, useState} from 'react';
+// import React, {useEffect, useState} from 'react';
 
 function App () {
   return (
@@ -19,6 +20,7 @@ function App () {
 function MyComponent ( props ) {
   const [ points, setPoints ] = useState( 1 )
   const [ counter, setCounter ] = useState( 0 );
+
   const myComponentStyle = {
     backgroundColor: 'floralwhite',
     margin: 'auto',
